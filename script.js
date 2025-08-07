@@ -17,3 +17,13 @@ let tableauKanban = [
     taches: [""],
   },
 ];
+
+
+function creerListe(listeObj) {
+const containerTableau = document.querySelector(.kanban);
+
+//je crée le conteneur principale de la liste avec une div
+const divListe = document.createElement("div");
+divListe.classList.add("liste")
+
+}
