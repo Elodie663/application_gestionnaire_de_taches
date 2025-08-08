@@ -2,7 +2,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  background-color: #ffffff;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    #ffe259,
+    #ffa751,
+    #ff6a00,
+    #d80027
+  );
 }
 
 h1 {
@@ -31,21 +38,20 @@ h1 {
 }
 
 .col-a-faire {
-  background-color: #caff09 !important; /* Rouge clair */
+  background-color: #7fffec;
 }
 
 .col-en-cours {
-  background-color: #d1ecf1; /* Bleu clair */
+  background-color: #5ce0f7;
 }
 
 .col-terminé {
-  background-color: #226587; /* Vert clair */
+  background-color: #2aabeb;
 }
 
 .col-approuve {
-  background-color: #fff3cd; /* Jaune clair */
+  background-color: #da78d5;
 }
-
 .liste h2 {
   margin-top: 0;
   font-size: 1.2em;
@@ -61,8 +67,38 @@ h1 {
 }
 
 .tache {
-  background-color: #eb8f8f;
+  background-color: #f8ecec;
   padding: 8px;
   border-radius: 4px;
   cursor: grab;
+}
+
+.input-tache,
+.btn-ajouter-tache {
+  width: 225px;
+  height: 38px; /* Hauteur fixe pour uniformiser */
+  font-size: 16px;
+  border-radius: 8px;
+  box-sizing: border-box; /* Important pour que padding + border ne dépasse pas height */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.input-tache {
+  padding: 10px;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.btn-ajouter-tache {
+  padding: 10px;
+  background-color: #aeaea7;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ajouter-tache:hover {
+  background-color: #e0dc6a;
 }
