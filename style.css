@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.kanban {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.liste {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 250px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-a-faire {
+  background-color: #caff09 !important; /* Rouge clair */
+}
+
+.col-en-cours {
+  background-color: #d1ecf1; /* Bleu clair */
+}
+
+.col-terminé {
+  background-color: #226587; /* Vert clair */
+}
+
+.col-approuve {
+  background-color: #fff3cd; /* Jaune clair */
+}
+
+.liste h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.zone-taches {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+.tache {
+  background-color: #eb8f8f;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: grab;
+}

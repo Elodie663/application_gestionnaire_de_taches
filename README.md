@@ -28,13 +28,26 @@ Fonctionnalités principales requises :
 - localStorage
 - Drag and Drop
 
-## Arborescence du projet
+## Arborescence du projet au début du projet
 
 .
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
+
+# Mise à jour de l'arborescence le 2025-08-08
+
+Ajout des modules localStorage, kanbanDOM et dragDrop pour séparer le code :
+
+│
+├── index.html
+├── style.css
+├── script.js  
+│
+├── localStorage.js  
+├── kanbanDOM.js  
+└── dragDrop.js
 
 ## Projet réalisé dans le cadre de la formation de développeur web et mobile de BeWeb (promo 2025-2026)
 
