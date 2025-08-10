@@ -28,7 +28,7 @@ h1 {
 }
 
 .liste {
-  border: 1px solid #ddd;
+  border: 1px solid #000000;
   border-radius: 8px;
   padding: 10px;
   width: 250px;
@@ -58,6 +58,20 @@ h1 {
   text-align: center;
 }
 
+.ajouter-colonne {
+  background-color: #09ff00;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.ajouter-colonne:hover {
+  background-color: #fff700;
+}
+
+.col-nouvelle {
+  background-color: #12d591;
+}
+
 .zone-taches {
   display: flex;
   flex-direction: column;
@@ -67,10 +81,21 @@ h1 {
 }
 
 .tache {
-  background-color: #f8ecec;
-  padding: 8px;
-  border-radius: 4px;
-  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 4px;
+  background-color: #ffffff;
+}
+
+.btn-supprimer {
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  margin-left: 8px;
 }
 
 .input-tache,
@@ -102,3 +127,57 @@ h1 {
 .btn-ajouter-tache:hover {
   background-color: #e0dc6a;
 }
+.entete-liste {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.btn-supprimer-colonne {
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-supprimer-colonne:hover {
+  background: #ff3742;
+}
+
+/* Mon mémo des principales commandes pour le flex box
+
+CONTENEUR FLEX :
+display: flex;                    = Active flexbox - les enfants se mettent en ligne 
+
+DIRECTION :
+flex-direction: row;              = En ligne (par défaut) 
+flex-direction: column;           =  En colonne 
+
+JUSTIFICATION HORIZONTALE (axe principal) :
+justify-content: flex-start;      =  Au début (par défaut) 
+justify-content: center;          =  Au centre 
+justify-content: flex-end;        = À la fin 
+justify-content: space-between;   = Espace égal entre les éléments 
+justify-content: space-around;    =  Espace égal autour des éléments 
+justify-content: space-evenly;    = Espace parfaitement égal partout 
+
+ALIGNEMENT VERTICAL (axe secondaire) :
+align-items: stretch;            = S'étire sur toute la hauteur (par défaut) 
+align-items: flex-start;         =  En haut 
+align-items: center;             = Au centre vertical 
+align-items: flex-end;           =  En bas 
+
+RETOUR À LA LIGNE :
+flex-wrap: nowrap;                = Tout sur une ligne (par défaut) 
+flex-wrap: wrap;                  =  Retour à la ligne si besoin 
+
+ENFANTS FLEX :
+flex: 1;                          = L'enfant prend tout l'espace disponible 
+flex-shrink: 0;                   = L'enfant ne rétrécit pas 
+*/
