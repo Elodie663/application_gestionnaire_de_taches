@@ -10,11 +10,15 @@ Le localStorage fonctionne comme un dictionnaire clé-valeur :
 //enregistrer les données dans le localStorage
 export function sauvegarderDonnees(tableauKanban) {
   localStorage.setItem("tableauKanban", JSON.stringify(tableauKanban));
+  //Rappel : JSON.stingify = prend un objet ou tableau JavaScript et le transforme en chaîne de caractères JSON
+  //le localStorage ne peut contenir que des chaines de caractère, stings
 }
 
 //charger les données depuis le localStorage
 export function chargerDonnees() {
   return JSON.parse(localStorage.getItem("tableauKanban")) || [];
+  //le pendant de JSON.stringify : JSON.parse = prend une chaîne JSON et la transforme de nouveau en objet ou tableau JavaScript.
+  //si jamais il n’y a rien dans localStorage || [] permet de retourner un tableau vide plutôt que null
 }
 
 /*********************************************************************** */
