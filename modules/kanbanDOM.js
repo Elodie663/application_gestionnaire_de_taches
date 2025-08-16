@@ -87,7 +87,7 @@ export function creerListe(listeObj, tableauKanban) {
   // Ajout de la liste dans le kanban (le DOM)
   containerTableau.appendChild(divListe);
 
-  //je crée ma boucle pour parcourir le tableau avec forEach
+  //avec forEach je crée ma boucle pour parcourir et afficher les taches existantes dans le tableau
   listeObj.taches.forEach(function (nomTache, index) {
     //ici je vérifie que ma tache n'est pas vide ou uniquement des espaces avec trim
     if (nomTache.trim() !== "") {
@@ -153,6 +153,8 @@ export function creerListe(listeObj, tableauKanban) {
 
       btnSupprimer.addEventListener("click", () => {
         const index = listeObj.taches.indexOf(nomTache);
+        //RAPPEL : La méthode indexOf() renvoie le premier indice pour lequel on trouve un élément donné dans un tableau.
+        // Si l'élément cherché n'est pas présent dans le tableau, la méthode renverra -1. index > - 1 = la tache existe dans le tableau
         if (index > -1) {
           listeObj.taches.splice(index, 1);
           sauvegarderDonnees(tableauKanban);
