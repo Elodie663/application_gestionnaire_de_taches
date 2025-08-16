@@ -30,12 +30,12 @@ export function creerListe(listeObj, tableauKanban) {
       break;
     default:
       divListe.classList.add("col-nouvelle");
-      // rappel default dans le switch = "Une clause exécutée si aucune correspondance
-      // n'est trouvée avec les clause case (et/ou s'il n'y a pas de break pour les clauses case précédentes"
+      /* RAPPEL : "default" dans le switch = "Une clause exécutée si aucune correspondance
+       n'est trouvée avec les clause case (et/ou s'il n'y a pas de break pour les clauses case précédentes"*/
       break;
   }
 
-  //je crée un conteneur enteteListe qui me permet d'avoir titre et bouton cote à cote
+  //je crée un conteneur "enteteListe" qui me permet d'avoir titre et bouton cote à cote
   const enteteListe = document.createElement("div");
   enteteListe.classList.add("entete-liste");
 
@@ -45,15 +45,15 @@ export function creerListe(listeObj, tableauKanban) {
 
   //je construis mon bouton de suppression puis...
   const btnSupprimerColonne = document.createElement("button");
-  btnSupprimerColonne.textContent = "×";
+  btnSupprimerColonne.textContent = "X";
   btnSupprimerColonne.classList.add("btn-supprimer-colonne");
   btnSupprimerColonne.title = "Supprimer la colonne";
 
   //le bouton va demander à l'utilisateur au click s'il veut supprimer la colonne et toutes ses taches
   btnSupprimerColonne.addEventListener("click", () => {
     if (
-      //confirm = fontion JS qui s'éffiche sous forme de pop up
-      //et qui ne peut renvoyer que 2 valerus True ou False
+      /*RAPPEL confirm = fontion JS qui s'affiche sous forme de pop up
+      et qui ne peut renvoyer que 2 valerus True ou False*/
       confirm(
         `Êtes-vous sûr de vouloir supprimer la colonne "${listeObj.nomListe}" et toutes ses tâches ?`
       )
@@ -63,13 +63,13 @@ export function creerListe(listeObj, tableauKanban) {
       const indexColonne = tableauKanban.findIndex(
         (liste) => liste === listeObj
       );
-      // Supprimer la colonne du tableau
+      //puis je supprime la colonne du tableau
       tableauKanban.splice(indexColonne, 1);
 
-      // Sauvegarder les données
+      // puis je sauvegarde les données
       sauvegarderDonnees(tableauKanban);
 
-      // Supprimer la colonne du DOM
+      // puis je supprime la colonne du DOM
       divListe.remove();
     }
   });

@@ -15,18 +15,30 @@ Fonctionnalités principales requises :
 - Sauvegarde automatique des données dans le navigateur (LocalStorage)
 - Suppression des listes et des tâches
 
-## Fonctionnement technique
+## Fonctionnement technique (MAJ le 2025-08-16)
 
-[à compléter]
+index.html est la vitrine du projet : un fichier minimaliste qui contient la structure de base et appelle le JavaScript.
+
+script.js est le point d’entrée qui initialise l’application en important les différents modules.
+
+L’application repose sur trois modules JavaScript bien séparés :
+
+    kanbanDOM.js : gère toute la partie interface utilisateur (création des colonnes, affichage des tâches, boutons d’ajout et de suppression).
+
+    localStorage.js : centralise la sauvegarde et le chargement des données via l’API localStorage du navigateur (les données persistent même après un rechargement de la page).
+
+    dragDrop.js : active le système de glisser-déposer (Drag & Drop HTML5) pour permettre le déplacement des tâches entre colonnes, tout en mettant à jour les données et en les sauvegardant.
+
+Le coeur du projet repose sur un objet JavaScript appelé tableauKanban. Il s’agit d’un tableau d’objets où chaque objet représente une colonne.
 
 ## Technologies
 
-- HTML
+- HTML5
 - CSS
 - JavaScript
-- DOM API
-- localStorage
-- Drag and Drop
+- DOM API (manipulation dynamique du HTML)
+- Web Storage API : localStorage
+- API HTML Drag and Drop
 
 ## Arborescence du projet au début du projet
 
