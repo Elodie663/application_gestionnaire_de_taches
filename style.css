@@ -187,6 +187,48 @@ h1 {
   }
 }
 
+/****************************************/
+/*Style pour la page d'accueil*/
+
+.accueil {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.accueil h1 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #2c3e50;
+}
+
+#bienvenue {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+#date {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+#btn-entrer {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#btn-entrer:hover {
+  background: #2980b9;
+}
+
 /* Mon mémo des principales commandes pour le flex box
 
 CONTENEUR FLEX :

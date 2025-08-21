@@ -35,6 +35,7 @@ activerDragDrop(tableauKanban); //Drag & Drop doit être appelé 2 fois, au char
 document.querySelector(".ajouter-colonne").addEventListener("click", () => {
   const nomListe = prompt("Nom de la nouvelle colonne");
   if (nomListe && nomListe.trim() !== "") {
+    //Rappel : la méthode trim() permet de retirer les blancs en début et fin de chaîne
     tableauKanban.push({
       nomListe: nomListe.trim(),
       taches: [],
