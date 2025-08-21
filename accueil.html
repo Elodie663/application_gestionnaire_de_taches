@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil</title>
     <link rel="stylesheet" href="style.css" />
-    <a href="index.html">Accéder au tableau</a>
   </head>
   <body>
-    <div id="accueil"></div>
-    <script type="module" src="accueil.js"></script>
+    <nav><a href="index.html">Accéder au tableau</a></nav>
+    <main aria-label="Page d'accueil">
+      <div id="accueil"></div>
+      <script type="module" src="accueil.js"></script>
+    </main>
   </body>
 </html>
+
+<!-- Mise à jour pour l'accessibilité de la page HTML
+   déplacement du <a href> dans le body pour que la balise soit visible pour les lecteurs
+   ajout de la balise main et dans la balise main, ajout de l'aria label
+-->

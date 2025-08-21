@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Application gestionnaire de tâches</title>
     <link rel="stylesheet" href="style.css" />
-    <a href="accueil.html">Accueil</a>
   </head>
   <body>
+    <nav><a href="accueil.html">Accueil</a></nav>
     <h1>Mon tableau gestionnaire de tâches</h1>
-    <button class="ajouter-colonne">Ajouter une colonne</button>
+    <button
+      class="ajouter-colonne"
+      aria-label="Ajouter une nouvelle colonne au tableau"
+    >
+      Ajouter une colonne
+    </button>
     <div class="kanban"></div>
     <script type="module" src="script.js"></script>
   </body>
 </html>
+
+<!-- Mise à jour pour l'accessibilité de la page HTML
+   déplacement du <a href> dans le body pour que la balise soit visible pour les lecteurs
+    ajout du aria label dans la balise <button>
+-->

@@ -4,6 +4,13 @@
 // ce qui me permet de conserver les données à chaque modification.
 import { sauvegarderDonnees } from "./localStorage.js";
 
+//GREEN CODE : éviter la répétition du bouton de suppression X en écrivant une fonction répétable
+function creerBoutonSupprimer() {
+  const btn = document.createElement("button");
+  btn.textContent = "X";
+  btn.classList.add("btn-supprimer");
+  return btn;
+}
 //la fonction principale contient deux paramètres :
 //- listeObj = nom de la liste et taches
 //- tableauKanban = l'ensemble des listes nécessaires pour la sauvegarde
@@ -15,6 +22,7 @@ export function creerListe(listeObj, tableauKanban) {
   divListe.classList.add("liste");
 
   //j'utilise switch pour appliquer une classe différente dans mon CSS
+  /*
   switch (listeObj.nomListe) {
     case "À faire":
       divListe.classList.add("col-a-faire");
@@ -29,11 +37,25 @@ export function creerListe(listeObj, tableauKanban) {
       divListe.classList.add("col-approuve");
       break;
     default:
-      divListe.classList.add("col-nouvelle");
-      /* RAPPEL : "default" dans le switch = "Une clause exécutée si aucune correspondance
+      divListe.classList.add("col-nouvelle");*/
+  /* RAPPEL : "default" dans le switch = "Une clause exécutée si aucune correspondance
        n'est trouvée avec les clause case (et/ou s'il n'y a pas de break pour les clauses case précédentes"*/
-      break;
-  }
+  /*  break;*/
+
+  //GREEN CODE : suppression de la boucle switch
+  //utilisation d'une constante avec une classe objet
+  const classesColonnes = {
+    "À faire": "col-a-faire",
+    "En cours": "col-en-cours",
+    Terminé: "col-terminé",
+    Approuvé: "col-approuve",
+  };
+
+  // je récupère la classe qui correspond au nom, ou "col-nouvelle" par défaut
+  const classeColonne = classesColonnes[listeObj.nomListe] || "col-nouvelle";
+
+  // j'ajoute la classe
+  divListe.classList.add(classeColonne);
 
   //je crée un conteneur "enteteListe" qui me permet d'avoir titre et bouton cote à cote
   const enteteListe = document.createElement("div");
@@ -48,6 +70,12 @@ export function creerListe(listeObj, tableauKanban) {
   btnSupprimerColonne.textContent = "X";
   btnSupprimerColonne.classList.add("btn-supprimer-colonne");
   btnSupprimerColonne.title = "Supprimer la colonne";
+
+  //Modif accessibilité : ajout de l'attribut aria-label
+  btnSupprimerColonne.setAttribute(
+    "aria-label",
+    "Supprimer la colonne ${listeObj.nomListe}"
+  );
 
   //le bouton va demander à l'utilisateur au click s'il veut supprimer la colonne et toutes ses taches
   btnSupprimerColonne.addEventListener("click", () => {
@@ -103,9 +131,11 @@ export function creerListe(listeObj, tableauKanban) {
       divTache.appendChild(texteTache);
 
       //je crée le bouton de suppression de la tache
-      const btnSupprimer = document.createElement("button");
+      /*  const btnSupprimer = document.createElement("button");
       btnSupprimer.textContent = "X";
-      btnSupprimer.classList.add("btn-supprimer");
+      btnSupprimer.classList.add("btn-supprimer");*/
+      //j'apelle ma fonction bouton ici :
+      const btnSupprimer = creerBoutonSupprimer();
       divTache.appendChild(btnSupprimer);
 
       //j'ajoute l'écouteur d'évenément en utilisant la méthode splice = car tableau
@@ -123,6 +153,12 @@ export function creerListe(listeObj, tableauKanban) {
   inputTache.type = "text";
   inputTache.placeholder = "Nouvelle carte";
   inputTache.classList.add("input-tache");
+
+  //Modif accessibilité : ajout de l'attribut aria label sur l'input de création de tache
+  inputTache.setAttribute(
+    "aria-label",
+    "Ajouter une nouvelle tâche dans " + listeObj.nomListe
+  );
 
   //je crée le bouton pour ajouter la tache
   const boutonAjouter = document.createElement("button");
@@ -147,9 +183,10 @@ export function creerListe(listeObj, tableauKanban) {
       texteTache.textContent = nomTache;
       divTache.appendChild(texteTache);
       //...j'ajoute le bouton de suppression...
-      const btnSupprimer = document.createElement("button");
+      /*const btnSupprimer = document.createElement("button");
       btnSupprimer.textContent = "X";
-      btnSupprimer.classList.add("btn-supprimer");
+      btnSupprimer.classList.add("btn-supprimer");*/
+      const btnSupprimer = creerBoutonSupprimer();
 
       btnSupprimer.addEventListener("click", () => {
         const index = listeObj.taches.indexOf(nomTache);
