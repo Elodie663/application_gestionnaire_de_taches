@@ -1,5 +1,5 @@
 // je sélectionne la page de la avec son ID div d'accueil
-const accueil = document.getElementById("accueil");
+const accueil = document.querySelector(".accueil");
 
 // je crée et affiche le message d'accueil
 const titre = document.createElement("h1");
@@ -13,7 +13,7 @@ accueil.appendChild(date);
 
 // j'ajoyute le bouton qui me permet d'accéder à mon kanban
 const bouton = document.createElement("button");
-bouton.textContent = "Accéder au tableau Kanban";
+bouton.textContent = "Accéder à mon tableau Kanban";
 bouton.addEventListener("click", () => {
   window.location.href = "index.html"; // redirection vers le Kanban
 });

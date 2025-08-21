@@ -74,7 +74,7 @@ export function creerListe(listeObj, tableauKanban) {
   //Modif accessibilité : ajout de l'attribut aria-label
   btnSupprimerColonne.setAttribute(
     "aria-label",
-    "Supprimer la colonne ${listeObj.nomListe}"
+    `Supprimer la colonne ${listeObj.nomListe}`
   );
 
   //le bouton va demander à l'utilisateur au click s'il veut supprimer la colonne et toutes ses taches
